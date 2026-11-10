@@ -1,0 +1,128 @@
+[
+  {
+    "label": "Typical (noise 0.04, open 0.08)",
+    "noise": 0.04,
+    "open": 0.08,
+    "closed": 0.72,
+    "selectMinMs": 540,
+    "results": {
+      "Naive: any blink selects": {
+        "recall": 1,
+        "falsePerMin": 13.600000000000769
+      },
+      "Naive + 550 ms minimum": {
+        "recall": 1,
+        "falsePerMin": 0
+      },
+      "Unspoken (calibrated, smoothed, hysteresis)": {
+        "recall": 1,
+        "falsePerMin": 0
+      }
+    }
+  },
+  {
+    "label": "Noisy camera (noise 0.10)",
+    "noise": 0.1,
+    "open": 0.08,
+    "closed": 0.72,
+    "selectMinMs": 600,
+    "results": {
+      "Naive: any blink selects": {
+        "recall": 1,
+        "falsePerMin": 15.200000000000859
+      },
+      "Naive + 550 ms minimum": {
+        "recall": 0.92,
+        "falsePerMin": 0
+      },
+      "Unspoken (calibrated, smoothed, hysteresis)": {
+        "recall": 1,
+        "falsePerMin": 0
+      }
+    }
+  },
+  {
+    "label": "Droopy eyelids (open 0.30)",
+    "noise": 0.04,
+    "open": 0.3,
+    "closed": 0.72,
+    "selectMinMs": 450,
+    "results": {
+      "Naive: any blink selects": {
+        "recall": 1,
+        "falsePerMin": 14.600000000000824
+      },
+      "Naive + 550 ms minimum": {
+        "recall": 1,
+        "falsePerMin": 0
+      },
+      "Unspoken (calibrated, smoothed, hysteresis)": {
+        "recall": 1,
+        "falsePerMin": 0
+      }
+    }
+  },
+  {
+    "label": "Very droopy eyelids (open 0.48)",
+    "noise": 0.04,
+    "open": 0.48,
+    "closed": 0.72,
+    "selectMinMs": 450,
+    "results": {
+      "Naive: any blink selects": {
+        "recall": 1,
+        "falsePerMin": 345.1000000000195
+      },
+      "Naive + 550 ms minimum": {
+        "recall": 1,
+        "falsePerMin": 0
+      },
+      "Unspoken (calibrated, smoothed, hysteresis)": {
+        "recall": 1,
+        "falsePerMin": 0
+      }
+    }
+  },
+  {
+    "label": "Very droopy + noisy (open 0.48, noise 0.08)",
+    "noise": 0.08,
+    "open": 0.48,
+    "closed": 0.72,
+    "selectMinMs": 480,
+    "results": {
+      "Naive: any blink selects": {
+        "recall": 0.96875,
+        "falsePerMin": 389.90000000002203
+      },
+      "Naive + 550 ms minimum": {
+        "recall": 0.96875,
+        "falsePerMin": 0
+      },
+      "Unspoken (calibrated, smoothed, hysteresis)": {
+        "recall": 0.96875,
+        "falsePerMin": 0
+      }
+    }
+  },
+  {
+    "label": "Weak eye closure (closed only 0.42; e.g. weak lids or glasses glare)",
+    "noise": 0.04,
+    "open": 0.1,
+    "closed": 0.42,
+    "selectMinMs": 480,
+    "results": {
+      "Naive: any blink selects": {
+        "recall": 0.5757575757575758,
+        "falsePerMin": 1.6000000000000905
+      },
+      "Naive + 550 ms minimum": {
+        "recall": 0,
+        "falsePerMin": 0
+      },
+      "Unspoken (calibrated, smoothed, hysteresis)": {
+        "recall": 1,
+        "falsePerMin": 0
+      }
+    }
+  }
+]

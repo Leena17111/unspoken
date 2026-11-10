@@ -82,3 +82,12 @@ describe('calibrate', () => {
     expect(c.quality.ok).toBe(false);
   });
 });
+
+describe('calibration robustness (regression)', () => {
+  it('a long blink during the relaxed phase does not inflate the selection threshold', () => {
+    const relaxed = frames([{ ms: 2000 }, { ms: 250, closure: 0.75 }, { ms: 2000 }, { ms: 1100, closure: 0.75 }, { ms: 2000 }, { ms: 300, closure: 0.75 }, { ms: 2000 }]);
+    const c = calibrate({ relaxed, closed: frames([{ ms: 2000, closure: 0.75 }]) });
+    expect(c.selectMinMs).toBeLessThanOrEqual(700);
+    expect(c.naturalBlinks.every((d) => d <= 550)).toBe(true);
+  });
+});

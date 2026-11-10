@@ -1,0 +1,919 @@
+{
+  "n": 30,
+  "coverage": 0.7333333333333333,
+  "medianLatencyMs": 0.0037290000000211876,
+  "mean": {
+    "plain": 118556.66666666667,
+    "predicted": 68643.33333333333,
+    "unspoken": 29440
+  },
+  "meanSelections": {
+    "plain": 28.933333333333334,
+    "predicted": 16.133333333333333,
+    "unspoken": 7
+  },
+  "timeSavedVsPlain": 0.7516799280231675,
+  "timeSavedVsPredicted": 0.5711163987762832,
+  "results": [
+    {
+      "id": "s01",
+      "partner": "Are you in pain?",
+      "target": "Yes I am in pain",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes, I am in pain",
+        "No pain",
+        "A little",
+        "It is getting worse"
+      ],
+      "source": "core",
+      "latencyMs": 0.05621999999999616,
+      "plain": {
+        "selections": 35,
+        "scanSteps": 89,
+        "ms": 147200
+      },
+      "predicted": {
+        "selections": 17,
+        "scanSteps": 35,
+        "ms": 60800
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s02",
+      "partner": "Are you in any pain right now?",
+      "target": "No pain",
+      "matched": true,
+      "matchIndex": 1,
+      "options": [
+        "Yes, I am in pain",
+        "No pain",
+        "A little",
+        "It is getting worse"
+      ],
+      "source": "core",
+      "latencyMs": 0.01383400000003121,
+      "plain": {
+        "selections": 17,
+        "scanSteps": 52,
+        "ms": 82900
+      },
+      "predicted": {
+        "selections": 9,
+        "scanSteps": 24,
+        "ms": 39300
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 3,
+        "ms": 5700
+      }
+    },
+    {
+      "id": "s03",
+      "partner": "Where does it hurt?",
+      "target": "My chest",
+      "matched": false,
+      "matchIndex": -1,
+      "options": [
+        "Yes, I am in pain",
+        "No pain",
+        "A little",
+        "It is getting worse"
+      ],
+      "source": "core",
+      "latencyMs": 0.011827999999979966,
+      "plain": {
+        "selections": 19,
+        "scanSteps": 43,
+        "ms": 73000
+      },
+      "predicted": {
+        "selections": 9,
+        "scanSteps": 22,
+        "ms": 36700
+      },
+      "unspoken": {
+        "selections": 10,
+        "scanSteps": 27,
+        "ms": 44100
+      }
+    },
+    {
+      "id": "s04",
+      "partner": "Is it your throat?",
+      "target": "Yes my throat hurts",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.009469000000024153,
+      "plain": {
+        "selections": 41,
+        "scanSteps": 92,
+        "ms": 156500
+      },
+      "predicted": {
+        "selections": 15,
+        "scanSteps": 32,
+        "ms": 55100
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s05",
+      "partner": "Do you need anything?",
+      "target": "I am thirsty",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Water / my mouth is dry",
+        "Suction please",
+        "Change my position",
+        "Call my family"
+      ],
+      "source": "core",
+      "latencyMs": 0.00892399999997906,
+      "plain": {
+        "selections": 27,
+        "scanSteps": 62,
+        "ms": 104900
+      },
+      "predicted": {
+        "selections": 13,
+        "scanSteps": 23,
+        "ms": 41600
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s06",
+      "partner": "Can I get you anything?",
+      "target": "Suction please",
+      "matched": true,
+      "matchIndex": 1,
+      "options": [
+        "Water / my mouth is dry",
+        "Suction please",
+        "Change my position",
+        "Call my family"
+      ],
+      "source": "core",
+      "latencyMs": 0.00461200000000872,
+      "plain": {
+        "selections": 31,
+        "scanSteps": 84,
+        "ms": 137100
+      },
+      "predicted": {
+        "selections": 11,
+        "scanSteps": 30,
+        "ms": 48900
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 3,
+        "ms": 5700
+      }
+    },
+    {
+      "id": "s07",
+      "partner": "How are you feeling today?",
+      "target": "I am scared",
+      "matched": true,
+      "matchIndex": 2,
+      "options": [
+        "I am okay",
+        "I feel uncomfortable",
+        "I am scared",
+        "I am tired"
+      ],
+      "source": "core",
+      "latencyMs": 0.003834999999980937,
+      "plain": {
+        "selections": 25,
+        "scanSteps": 57,
+        "ms": 96600
+      },
+      "predicted": {
+        "selections": 13,
+        "scanSteps": 21,
+        "ms": 39000
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 4,
+        "ms": 7000
+      }
+    },
+    {
+      "id": "s08",
+      "partner": "How are you feeling?",
+      "target": "I am okay",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "I am okay",
+        "I feel uncomfortable",
+        "I am scared",
+        "I am tired"
+      ],
+      "source": "core",
+      "latencyMs": 0.0034229999999979555,
+      "plain": {
+        "selections": 21,
+        "scanSteps": 52,
+        "ms": 86500
+      },
+      "predicted": {
+        "selections": 13,
+        "scanSteps": 24,
+        "ms": 42900
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s09",
+      "partner": "Do you want me to call your family?",
+      "target": "Yes please call my family",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.007057000000031621,
+      "plain": {
+        "selections": 53,
+        "scanSteps": 135,
+        "ms": 223200
+      },
+      "predicted": {
+        "selections": 17,
+        "scanSteps": 46,
+        "ms": 75100
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s10",
+      "partner": "Would you like to sit up a bit?",
+      "target": "Yes",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.004989000000023225,
+      "plain": {
+        "selections": 9,
+        "scanSteps": 21,
+        "ms": 35400
+      },
+      "predicted": {
+        "selections": 5,
+        "scanSteps": 13,
+        "ms": 21400
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s11",
+      "partner": "Would you like to sit up a bit?",
+      "target": "No",
+      "matched": true,
+      "matchIndex": 1,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.002571000000045842,
+      "plain": {
+        "selections": 7,
+        "scanSteps": 21,
+        "ms": 33600
+      },
+      "predicted": {
+        "selections": 5,
+        "scanSteps": 12,
+        "ms": 20100
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 3,
+        "ms": 5700
+      }
+    },
+    {
+      "id": "s12",
+      "partner": "Are you cold?",
+      "target": "Yes I am cold",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.0028750000000172804,
+      "plain": {
+        "selections": 29,
+        "scanSteps": 70,
+        "ms": 117100
+      },
+      "predicted": {
+        "selections": 15,
+        "scanSteps": 31,
+        "ms": 53800
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s13",
+      "partner": "Do you want the lights off?",
+      "target": "Yes lights off please",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.003436999999962609,
+      "plain": {
+        "selections": 45,
+        "scanSteps": 107,
+        "ms": 179600
+      },
+      "predicted": {
+        "selections": 21,
+        "scanSteps": 62,
+        "ms": 99500
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s14",
+      "partner": "Is the pain getting better or worse?",
+      "target": "Worse",
+      "matched": true,
+      "matchIndex": 3,
+      "options": [
+        "Yes, I am in pain",
+        "No pain",
+        "A little",
+        "It is getting worse"
+      ],
+      "source": "core",
+      "latencyMs": 0.0042659999999727916,
+      "plain": {
+        "selections": 13,
+        "scanSteps": 29,
+        "ms": 49400
+      },
+      "predicted": {
+        "selections": 9,
+        "scanSteps": 23,
+        "ms": 38000
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 5,
+        "ms": 8300
+      }
+    },
+    {
+      "id": "s15",
+      "partner": "Is the pain getting better or worse?",
+      "target": "Better",
+      "matched": false,
+      "matchIndex": -1,
+      "options": [
+        "Yes, I am in pain",
+        "No pain",
+        "A little",
+        "It is getting worse"
+      ],
+      "source": "core",
+      "latencyMs": 0.003958000000011452,
+      "plain": {
+        "selections": 15,
+        "scanSteps": 36,
+        "ms": 60300
+      },
+      "predicted": {
+        "selections": 7,
+        "scanSteps": 24,
+        "ms": 37500
+      },
+      "unspoken": {
+        "selections": 8,
+        "scanSteps": 29,
+        "ms": 44900
+      }
+    },
+    {
+      "id": "s16",
+      "partner": "Do you know where you are?",
+      "target": "Yes in hospital",
+      "matched": false,
+      "matchIndex": -1,
+      "options": [
+        "My chest",
+        "My throat",
+        "My head",
+        "My stomach"
+      ],
+      "source": "core",
+      "latencyMs": 0.0023850000000038563,
+      "plain": {
+        "selections": 33,
+        "scanSteps": 85,
+        "ms": 140200
+      },
+      "predicted": {
+        "selections": 25,
+        "scanSteps": 78,
+        "ms": 123900
+      },
+      "unspoken": {
+        "selections": 26,
+        "scanSteps": 83,
+        "ms": 131300
+      }
+    },
+    {
+      "id": "s17",
+      "partner": "Did you sleep last night?",
+      "target": "No I could not sleep",
+      "matched": true,
+      "matchIndex": 1,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.003149000000007618,
+      "plain": {
+        "selections": 43,
+        "scanSteps": 115,
+        "ms": 188200
+      },
+      "predicted": {
+        "selections": 29,
+        "scanSteps": 78,
+        "ms": 127500
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 3,
+        "ms": 5700
+      }
+    },
+    {
+      "id": "s18",
+      "partner": "Hello, I am your nurse for today.",
+      "target": "Hello",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Hello",
+        "I need something",
+        "I am in pain",
+        "Please stay with me"
+      ],
+      "source": "core",
+      "latencyMs": 0.0026669999999739957,
+      "plain": {
+        "selections": 13,
+        "scanSteps": 34,
+        "ms": 55900
+      },
+      "predicted": {
+        "selections": 13,
+        "scanSteps": 40,
+        "ms": 63700
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s19",
+      "partner": "What is wrong?",
+      "target": "I cannot breathe well",
+      "matched": false,
+      "matchIndex": -1,
+      "options": [
+        "I am in pain",
+        "I need something",
+        "I am scared",
+        "I want my family"
+      ],
+      "source": "core",
+      "latencyMs": 0.0037290000000211876,
+      "plain": {
+        "selections": 45,
+        "scanSteps": 115,
+        "ms": 190000
+      },
+      "predicted": {
+        "selections": 23,
+        "scanSteps": 64,
+        "ms": 103900
+      },
+      "unspoken": {
+        "selections": 24,
+        "scanSteps": 69,
+        "ms": 111300
+      }
+    },
+    {
+      "id": "s20",
+      "partner": "Is the tube bothering you?",
+      "target": "Yes the tube hurts",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.0037919999999758147,
+      "plain": {
+        "selections": 39,
+        "scanSteps": 89,
+        "ms": 150800
+      },
+      "predicted": {
+        "selections": 15,
+        "scanSteps": 34,
+        "ms": 57700
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s21",
+      "partner": "Do you want me to change your position?",
+      "target": "Yes please",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.0031590000000392138,
+      "plain": {
+        "selections": 23,
+        "scanSteps": 53,
+        "ms": 89600
+      },
+      "predicted": {
+        "selections": 9,
+        "scanSteps": 26,
+        "ms": 41900
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s22",
+      "partner": "Do you need the toilet?",
+      "target": "Yes",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.0025899999999978718,
+      "plain": {
+        "selections": 9,
+        "scanSteps": 21,
+        "ms": 35400
+      },
+      "predicted": {
+        "selections": 5,
+        "scanSteps": 13,
+        "ms": 21400
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s23",
+      "partner": "Your wife is here. Do you want to see her?",
+      "target": "Yes please",
+      "matched": false,
+      "matchIndex": -1,
+      "options": [
+        "Water / my mouth is dry",
+        "Suction please",
+        "Change my position",
+        "Call my family"
+      ],
+      "source": "core",
+      "latencyMs": 0.0023559999999633874,
+      "plain": {
+        "selections": 23,
+        "scanSteps": 53,
+        "ms": 89600
+      },
+      "predicted": {
+        "selections": 9,
+        "scanSteps": 26,
+        "ms": 41900
+      },
+      "unspoken": {
+        "selections": 10,
+        "scanSteps": 31,
+        "ms": 49300
+      }
+    },
+    {
+      "id": "s24",
+      "partner": "Do you understand what the doctor said?",
+      "target": "No please explain again",
+      "matched": true,
+      "matchIndex": 1,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.0020400000000222462,
+      "plain": {
+        "selections": 49,
+        "scanSteps": 136,
+        "ms": 220900
+      },
+      "predicted": {
+        "selections": 31,
+        "scanSteps": 98,
+        "ms": 155300
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 3,
+        "ms": 5700
+      }
+    },
+    {
+      "id": "s25",
+      "partner": "Are you feeling sick?",
+      "target": "A little",
+      "matched": false,
+      "matchIndex": -1,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.0028489999999692373,
+      "plain": {
+        "selections": 19,
+        "scanSteps": 46,
+        "ms": 76900
+      },
+      "predicted": {
+        "selections": 19,
+        "scanSteps": 55,
+        "ms": 88600
+      },
+      "unspoken": {
+        "selections": 20,
+        "scanSteps": 60,
+        "ms": 96000
+      }
+    },
+    {
+      "id": "s26",
+      "partner": "Do you want some music on?",
+      "target": "No thank you",
+      "matched": true,
+      "matchIndex": 1,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.003604999999993197,
+      "plain": {
+        "selections": 27,
+        "scanSteps": 75,
+        "ms": 121800
+      },
+      "predicted": {
+        "selections": 17,
+        "scanSteps": 42,
+        "ms": 69900
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 3,
+        "ms": 5700
+      }
+    },
+    {
+      "id": "s27",
+      "partner": "Is your mouth dry?",
+      "target": "Yes my mouth is dry",
+      "matched": true,
+      "matchIndex": 0,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.0024930000000153996,
+      "plain": {
+        "selections": 41,
+        "scanSteps": 97,
+        "ms": 163000
+      },
+      "predicted": {
+        "selections": 21,
+        "scanSteps": 49,
+        "ms": 82600
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 2,
+        "ms": 4400
+      }
+    },
+    {
+      "id": "s28",
+      "partner": "Shall I read you the news or let you rest?",
+      "target": "Let me rest",
+      "matched": true,
+      "matchIndex": 1,
+      "options": [
+        "The first one",
+        "The second one",
+        "Neither",
+        "I am not sure"
+      ],
+      "source": "core",
+      "latencyMs": 0.008575000000007549,
+      "plain": {
+        "selections": 25,
+        "scanSteps": 47,
+        "ms": 83600
+      },
+      "predicted": {
+        "selections": 23,
+        "scanSteps": 55,
+        "ms": 92200
+      },
+      "unspoken": {
+        "selections": 2,
+        "scanSteps": 3,
+        "ms": 5700
+      }
+    },
+    {
+      "id": "s29",
+      "partner": "Anything you want to tell your daughter?",
+      "target": "Tell her I love her",
+      "matched": false,
+      "matchIndex": -1,
+      "options": [
+        "Water / my mouth is dry",
+        "Suction please",
+        "Change my position",
+        "Call my family"
+      ],
+      "source": "core",
+      "latencyMs": 0.003540999999984251,
+      "plain": {
+        "selections": 41,
+        "scanSteps": 88,
+        "ms": 151300
+      },
+      "predicted": {
+        "selections": 31,
+        "scanSteps": 69,
+        "ms": 117600
+      },
+      "unspoken": {
+        "selections": 32,
+        "scanSteps": 74,
+        "ms": 125000
+      }
+    },
+    {
+      "id": "s30",
+      "partner": "Are you worried about something?",
+      "target": "I am worried about money",
+      "matched": false,
+      "matchIndex": -1,
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure",
+        "Please ask me later"
+      ],
+      "source": "core",
+      "latencyMs": 0.004912999999987733,
+      "plain": {
+        "selections": 51,
+        "scanSteps": 131,
+        "ms": 216200
+      },
+      "predicted": {
+        "selections": 35,
+        "scanSteps": 100,
+        "ms": 161500
+      },
+      "unspoken": {
+        "selections": 36,
+        "scanSteps": 105,
+        "ms": 168900
+      }
+    }
+  ]
+}

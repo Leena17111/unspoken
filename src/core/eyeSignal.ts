@@ -198,10 +198,13 @@ export function calibrate(rec: CalibrationRecording): CalibrationResult {
   // use the last 70% of the closed window (people take a moment to close fully)
   const closedClosure = quantile(closedF.slice(Math.floor(closedF.length * 0.3)).map(rawClosure), 0.5);
   if (closedClosure - openClosure < 0.2) issues.push('Closed and open eyes look too similar. Try more light on your face, or remove glasses glare.');
-  const naturalBlinks = detectBlinks(relaxed, openClosure, closedClosure).filter((d) => d < 1000);
-  // A deliberate selection must be clearly longer than this person's natural blinks.
+  // Natural (spontaneous) blinks last roughly 100–400 ms. Anything longer in the relaxed
+  // recording was a deliberate or resting closure and must not inflate the threshold.
+  const naturalBlinks = detectBlinks(relaxed, openClosure, closedClosure).filter((d) => d >= 50 && d <= 550);
+  // A deliberate selection must be clearly longer than this person's natural blinks,
+  // but never so long that it becomes tiring (cap at 1 s).
   const longestNatural = naturalBlinks.length ? quantile(naturalBlinks, 0.95) : 250;
-  const selectMinMs = Math.round(Math.min(1500, Math.max(450, longestNatural * 1.8)));
+  const selectMinMs = Math.round(Math.min(1000, Math.max(450, longestNatural * 1.8)));
 
   const gazeNeutral = median(relaxed.map(rawGaze));
   let gazeSpan = DEFAULT_CALIBRATION.gazeSpan;
