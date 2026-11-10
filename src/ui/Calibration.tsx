@@ -58,13 +58,13 @@ export function CalibrationWizard({ cameraReady, onSave, onClose }: { cameraRead
   return (
     <div className="modal-back" role="dialog" aria-modal="true" aria-labelledby="cal-title">
       <div className={`modal calib ${phase}`}>
-        <h2 id="cal-title">Calibrate eye input</h2>
+        <h2 id="cal-title">Set up eye control</h2>
         {phase === 'intro' && (
           <>
-            <p>Everyone's eyes are different. In about 20 seconds Unspoken learns what <strong>open eyes</strong>, a <strong>natural blink</strong> and a <strong>deliberate long blink</strong> look like for this person, so normal blinking never selects anything.</p>
-            <ol className="plain"><li>Position the laptop so the face is centred and well lit (light in front, not behind).</li><li>Spoken instructions guide the patient. A caregiver can read them aloud too.</li></ol>
-            {!cameraReady && <p className="err">The camera is not running yet. Allow camera access first.</p>}
-            <div className="actions"><button className="primary" disabled={!cameraReady} onClick={run}>Start calibration</button><button onClick={onClose}>Cancel</button></div>
+            <p>Everyone's eyes are different. In about 20 seconds Unspoken learns this person's <strong>open eyes</strong>, <strong>normal blinks</strong> and <strong>closed eyes</strong>, so that normal blinking never chooses anything.</p>
+            <ol className="plain"><li>Place the screen so the patient's face is in the middle of the camera, with light in front of them, not behind.</li><li>A voice will guide the patient through four short steps. You can read the steps aloud too.</li></ol>
+            {!cameraReady && <p className="err" role="status">Waiting for the camera… If the browser asks, choose “Allow”.</p>}
+            <div className="actions"><button className="primary" disabled={!cameraReady} onClick={run}>Start (20 seconds)</button><button onClick={onClose}>Not now</button></div>
           </>
         )}
         {step && (
@@ -82,20 +82,20 @@ export function CalibrationWizard({ cameraReady, onSave, onClose }: { cameraRead
         {phase === 'result' && result && (
           <>
             <div className={`cal-result ${result.quality.ok ? 'ok' : 'warn'}`}>
-              <p className="cal-title">{result.quality.ok ? 'Calibration looks good' : 'Calibration needs attention'}</p>
+              <p className="cal-title">{result.quality.ok ? 'All set' : 'Almost there'}</p>
               {result.quality.issues.map((i) => <p key={i}>{i}</p>)}
             </div>
             <dl className="cal-stats">
-              <div><dt>Natural blinks seen</dt><dd>{result.naturalBlinks.length}{result.naturalBlinks.length ? ` (up to ${Math.round(Math.max(...result.naturalBlinks))} ms)` : ''}</dd></div>
-              <div><dt>Deliberate blink must last</dt><dd>{result.selectMinMs} ms</dd></div>
-              <div><dt>Open vs closed signal</dt><dd>{result.openClosure.toFixed(2)} → {result.closedClosure.toFixed(2)}</dd></div>
-              <div><dt>Glance range</dt><dd>{result.gazeSpan.toFixed(2)}</dd></div>
+              <div><dt>Normal blinks noticed</dt><dd>{result.naturalBlinks.length}{result.naturalBlinks.length ? ` (up to ${Math.round(Math.max(...result.naturalBlinks))} ms)` : ''}</dd></div>
+              <div><dt>Close eyes for at least</dt><dd>{result.selectMinMs} ms</dd></div>
+              <div><dt>Open → closed signal</dt><dd>{result.openClosure.toFixed(2)} → {result.closedClosure.toFixed(2)}</dd></div>
+              <div><dt>Sideways glance range</dt><dd>{result.gazeSpan.toFixed(2)}</dd></div>
             </dl>
             <div className={`practice ${practice.flash ? 'flash' : ''}`}>
-              <strong>Practice:</strong> blink normally (should be ignored), then close your eyes for about {(result.selectMinMs / 1000).toFixed(1)} s and open them.
-              <span>Selected: <b>{practice.select}</b> · Ignored blinks: <b>{practice.ignored}</b></span>
+              <strong>Try it:</strong> blink normally (nothing should happen), then close your eyes for about {(result.selectMinMs / 1000).toFixed(1)} seconds and open them. The box lights up.
+              <span aria-live="polite">Chosen: <b>{practice.select}</b> · Normal blinks ignored: <b>{practice.ignored}</b></span>
             </div>
-            <div className="actions"><button className="primary" onClick={() => onSave(result)}>Use this calibration</button><button onClick={run}>Redo</button><button onClick={onClose}>Cancel</button></div>
+            <div className="actions"><button className="primary" onClick={() => onSave(result)}>Done</button><button onClick={run}>Do it again</button><button onClick={onClose}>Cancel</button></div>
           </>
         )}
       </div>

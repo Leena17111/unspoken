@@ -3,7 +3,7 @@
 Unspoken reports two kinds of evidence, and never mixes them:
 
 1. **Simulation** (reproducible, no humans): `npm run eval` writes everything below to `docs/results/`.
-2. **Live trials** (real camera, real people): run in the app under **Evaluate**, exported as JSON. These are healthy volunteers, **not patients**.
+2. **Live trials** (real camera, real people): run in the developer **Lab** (`npm run dev`, open `#/lab`), exported as JSON. These are healthy volunteers, **not patients**. The Lab is excluded from the public build.
 
 ## Method
 
@@ -90,9 +90,9 @@ The first version of calibration counted *any* closure in the "blink normally" p
 
 ## AI suggestions (needs an API key)
 
-Open **Evaluate → Run with AI suggestions**. The same 30 scenarios run through the configured model, reporting coverage, time per message and median latency next to the offline baseline. Download the JSON and add it to `docs/results/`.
+Set a key in **About → Staff setup**, then in the Lab click **Run with AI suggestions**. The same 30 scenarios run through the configured model, reporting coverage, time per message and median latency next to the offline baseline. Download the JSON and add it to `docs/results/`.
 
-## Live trial protocol (in the app)
+## Live trial protocol (developer Lab)
 
 1. **Calibrate** for the participant (about 20 s).
 2. **False-selection test:** 60 s of natural looking, reading and talking without trying to select. Report false selections per minute.

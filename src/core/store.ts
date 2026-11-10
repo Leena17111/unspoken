@@ -5,6 +5,7 @@ import type { AiSettings } from './options';
 export type InputMode = 'eyes-scan' | 'eyes-gaze' | 'switch';
 
 export interface Settings {
+  onboarded: boolean;
   inputMode: InputMode;
   stepMs: number;
   cameraOn: boolean;
@@ -12,14 +13,18 @@ export interface Settings {
   sounds: boolean;
   voiceLang: string;
   listenLang: string;
+  voiceName: string;
+  voiceRate: number;
+  calibratedAt: number | null;
   ai: AiSettings;
   patient: { name: string; notes: string; language: string };
   calibration: Calibration;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
+  onboarded: false,
   inputMode: 'eyes-scan', stepMs: 1300, cameraOn: true, showVideo: true, sounds: true,
-  voiceLang: 'en-US', listenLang: 'en-US',
+  voiceLang: 'en-US', listenLang: 'en-US', voiceName: '', voiceRate: 0.95, calibratedAt: null,
   ai: { provider: 'none', apiKey: '' },
   patient: { name: '', notes: '', language: 'English' },
   calibration: DEFAULT_CALIBRATION,

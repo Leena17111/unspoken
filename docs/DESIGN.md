@@ -4,6 +4,21 @@
 
 A patient who can only blink can make roughly one choice every few seconds. Conventional letter-board scanning spends that tiny bandwidth on individual letters. Unspoken spends it on **meaning**: it uses the caregiver's question as context and offers the few replies the patient is most likely to want, while keeping a full independent spelling channel for everything else.
 
+## 0. Experience design
+
+Users are tired, stressed, unfamiliar with technology and may only have one reliable movement. Decisions that follow from that:
+
+- **One question on first use.** "How will the patient choose? With their eyes / with a button or key." Choosing eyes goes straight into a 20-second guided eye setup. Nothing else must be read first.
+- **Two clearly different surfaces.** The patient side is dark, with 24–34 px answers, and only ever shows one thing to do. The caregiver side is ordinary paper-coloured UI with normal controls.
+- **One unmistakable highlight.** The current choice turns solid yellow, says how to choose it ("Close your eyes to choose" / "Press your button to choose"), shows a draining bar for when the highlight will move on, and fills while the eyes are held closed.
+- **Fixed positions for escape routes.** *Spell a message · Something else · Get help* always sit in the same bottom row, separated from the answers.
+- **Where am I?** Multi-step paths (pain, spelling) show a step indicator: Pain → Where → How bad → Check.
+- **Binary confirmation.** "Is this what you want to say?" → *Yes, say it* / *No, go back* (plus *Change the words*). Nothing is spoken without a yes.
+- **Feedback on both sides.** The patient sees "✓ Said aloud"; the caregiver sees a large "Patient said" card with how it was chosen and a *Say again* button.
+- **Rest.** Scanning pauses after three idle rounds and tells the patient how to wake it.
+- **Plain language everywhere.** "Eye control", not "calibration"; "Picked a suggested answer", not "AI source"; no percentages or model names in the public app.
+- **Evaluation stays out of the product.** Research tooling is in a developer-only Lab that production builds don't contain.
+
 ## 1. Eye input (`src/core/eyeSignal.ts`)
 
 MediaPipe Face Landmarker returns 52 blendshapes per frame. Unspoken uses six: `eyeBlinkLeft/Right` and `eyeLookIn/Out Left/Right`.
@@ -71,7 +86,7 @@ Row–column scanning with a frequency-ordered layout (␣ E T A O I N first) an
 |---|---|
 | Signal processing and calibration | Unit tests on synthetic eye signals (`tests/eyeSignal.test.ts`) |
 | Scanning, guardrails, spelling, effort model | Unit tests (`tests/*.test.ts`), including mocked malformed and valid LLM output |
-| Whole app | `e2e/run.mjs`: single-switch user completes the pain report, a spelled message and an attention request; timeline and evaluation render; axe checks |
+| Whole app | `e2e/run.mjs` on the production build: first-time setup, switch-only pain report with progress steps, cancel path, spelling, help on both sides, history labels, preferences without developer settings, no Lab or evaluation wording in production, axe WCAG 2.1 AA on every page |
 | CI | GitHub Actions runs tests, type-check and build, then deploys to GitHub Pages |
 
 ## Related work

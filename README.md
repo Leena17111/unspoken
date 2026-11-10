@@ -6,7 +6,7 @@ Unspoken lets a patient on a ventilator, after a stroke, or living with motor ne
 
 **Live app:** https://leena17111.github.io/unspoken/ · Built for the [Ctrl+V Hackathon](https://ctrl-v-hackathon-31831.devpost.com/) (accessibility)
 
-![Reply options for "Are you in pain?"](docs/screenshots/2-options.png)
+![The Talk screen: the caregiver's question, large answers, and the highlighted choice](docs/screenshots/2-answers.png)
 
 ## Why
 
@@ -22,12 +22,25 @@ Unspoken lets a patient on a ventilator, after a stroke, or living with motor ne
 | **Conversation-aware replies** | The caregiver speaks (or types). Unspoken shows quick replies instantly, then upgrades them to AI suggestions grounded in the conversation, if the patient hasn't started choosing yet. |
 | **Patient stays in control** | "Spell it myself" and "None of these" are always present. Nothing is spoken until the patient confirms. Rules guard the AI: yes/no questions always get both answers, and doses or treatment decisions are never suggested. |
 | **Independent spelling** | Row–column scanning keyboard with frequency layout and local word prediction. Works offline, without AI. |
-| **Structured pain reporting** | Location → severity → 0–10 score, logged to a handover **timeline** with a pain chart and CSV export. |
-| **Built-in evaluation** | Simulated effort study, 60-second false-selection test and timed message trials, all in the app. |
+| **Structured pain reporting** | Where → how bad → 0–10, with a progress indicator, kept in the conversation history. |
+| **Reproducible evaluation** | Simulated effort study, ablations and blink-detector comparison (`npm run eval`), plus a developer-only Lab for live trials. |
 
-| Pain path | Confirm before speaking | Handover timeline |
+| First visit | Pain path with progress | Confirm before speaking |
 |---|---|---|
-| ![](docs/screenshots/3-pain.png) | ![](docs/screenshots/4-confirm.png) | ![](docs/screenshots/6-timeline.png) |
+| ![Welcome: how will the patient choose?](docs/screenshots/0-welcome.png) | ![Where is the pain?](docs/screenshots/3-where.png) | ![Is this what you want to say?](docs/screenshots/4-confirm.png) |
+| **Spelling** | **Conversation history** | **Preferences** |
+| ![Spelling board with word suggestions](docs/screenshots/6-spell.png) | ![History](docs/screenshots/8-history.png) | ![Preferences](docs/screenshots/9-preferences.png) |
+
+## Product structure
+
+The public app has four places, and nothing else:
+
+- **Talk** (home): the patient side (dark, large, one yellow highlight) and the caregiver side (ask by voice or text, "Patient said", eye status). The first visit asks one question: *how will the patient choose?*
+- **History**: confirmed messages and pain reports, labelled by how each was chosen (suggested answer, quick answer, spelled, pain report). Clearly not a medical record.
+- **Preferences**: input method, eye setup and practice, speed, language, voice, sounds, camera preview. No developer settings.
+- **About**: what it is, its limits, privacy. Optional AI settings live on a separate *Staff setup* page linked only from About.
+
+Evaluation tools are **not** part of the public app. They live in a developer-only **Lab** (`npm run dev`, then open `#/lab`), which Vite removes from production builds. The tests check this.
 
 ## Results so far
 
@@ -70,7 +83,7 @@ flowchart LR
     GUARD --> UI
     SCAN --> UI
     UI --> CONF[Confirm] --> TTS[Speech output]
-    CONF --> LOG[(Local timeline)]
+    CONF --> LOG[(Conversation history, on this device)]
   end
 ```
 
@@ -83,10 +96,12 @@ npm install
 npm run dev        # http://localhost:5173 (allow camera + microphone; use Chrome or Edge)
 npm test           # 33 unit tests: signal processing, calibration, scanning, guardrails, spelling, evaluation
 npm run eval       # reproduce docs/results (simulation + ablations + blink-detector study)
-npm run e2e        # keyboard-only end-to-end run + axe WCAG 2.1 AA checks (needs a local build)
+npm run e2e        # end-to-end run of the production build: first-time setup, switch-only pain report,
+                   # spelling, help, history, preferences, no evaluation UI, axe WCAG 2.1 AA on every page
+# Developer lab (live trials, simulation viewer): npm run dev, then open http://localhost:5173/#/lab
 ```
 
-AI suggestions are optional. In **Settings**, choose a provider (Groq or Gemini have free tiers; OpenAI and Anthropic are also supported) and paste a key. It is stored only in your browser.
+AI suggestions are optional. Open **About → Staff setup**, choose a provider (Groq or Gemini have free tiers; OpenAI and Anthropic are also supported) and paste a key. It is stored only in your browser.
 
 ## Honest limitations
 
