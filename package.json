@@ -1,0 +1,40 @@
+{
+  "name": "unspoken",
+  "version": "0.1.0",
+  "description": "Eye-controlled, AI-assisted communication for people who cannot speak, using an ordinary webcam",
+  "scripts": {
+    "wasm": "node scripts/copy-wasm.mjs",
+    "dev": "npm run wasm && vite",
+    "build": "npm run wasm && tsc -p . && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "eval": "vite-node scripts/eval.ts",
+    "e2e": "node e2e/run.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leena17111/unspoken.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leena17111/unspoken/issues"
+  },
+  "homepage": "https://github.com/Leena17111/unspoken#readme",
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.3.0",
+    "playwright-core": "^1.65.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.7",
+    "vitest": "^5.1.0"
+  },
+  "private": true,
+  "type": "module"
+}
